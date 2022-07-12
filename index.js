@@ -7,6 +7,7 @@ const patchRouter = require('./routes/patchRouter');
 const deleteRouter = require('./routes/deleteRouter');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const PORT = 4000;
 const cors = require('cors');
 
 app.use(cors());
@@ -24,6 +25,6 @@ app.use('/updateUser', patchRouter);
 app.use('/remove', deleteRouter);
 
 
-app.listen(4000, () => {
+app.listen(PORT, () => {
     console.log("Server is running at port 4000");
 })
