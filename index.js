@@ -7,7 +7,7 @@ const patchRouter = require('./routes/patchRouter');
 const deleteRouter = require('./routes/deleteRouter');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const cors = require('cors');
 
 app.use(cors());
