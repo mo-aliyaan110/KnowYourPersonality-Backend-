@@ -1,6 +1,6 @@
 const Express = require('express');
 const app = new Express();
-require('dotenv/config');
+const DB_Url = `mongodb+srv://admin:password123321@expressrest.oy7hyam.mongodb.net/?retryWrites=true&w=majority`
 const getRouter = require('./routes/getRouter');
 const postRouter = require('./routes/postRouter');
 const patchRouter = require('./routes/patchRouter');
@@ -14,10 +14,10 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-mongoose.connect(process.env.DB_URL, () => {
+mongoose.connect(DB_Url, () => {
     console.log("Successfully connected the database..");
 })
-
+"<div>Hello World</div>";
 app.use('/users', getRouter);
 app.use('/addData', postRouter);
 app.use('/updateUser', patchRouter);
